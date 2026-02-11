@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSupport - Ruang Aman untuk Ceritamu</title>
+  <meta name="description" content="Platform Konseling Mandiri dengan AI dan Forum Diskusi Anonim untuk Mahasiswa">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#7c3bed",
+            "background-light": "#f9f8fc",
+            "background-dark": "#130e1b",
+            "surface-light": "#ffffff",
+            "surface-dark": "#1e1a29",
+            "border-light": "#ece7f3",
+            "border-dark": "#2d2438",
+            "text-main": "#130e1b",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+          boxShadow: {
+            'glow': '0 0 20px -5px rgba(124, 59, 237, 0.3)',
+          }
+        },
+      },
+    }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Vue.js 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- Vue Router CDN -->
+  <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <router-view></router-view>
+  </div>
+
+  <!-- Services -->
+  <script src="js/services/api.js"></script>
+
+  <!-- Components -->
+  <script src="js/components/Sidebar.js"></script>
+  <script src="js/components/Header.js"></script>
+  <script src="js/components/ChatMessage.js"></script>
+  <script src="js/components/PostCard.js"></script>
+  <script src="js/components/Modal.js"></script>
+
+  <!-- Pages -->
+  <script src="js/pages/Login.js"></script>
+  <script src="js/pages/Register.js"></script>
+  <script src="js/pages/Dashboard.js"></script>
+  <script src="js/pages/Chat.js"></script>
+  <script src="js/pages/Forum.js"></script>
+  <script src="js/pages/Journal.js"></script>
+  <script src="js/pages/Profile.js"></script>
+  <script src="js/pages/Admin.js"></script>
+
+  <!-- Main App -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
