@@ -6,7 +6,7 @@
 // Use /api for production (proxied by nginx) or localhost:8001 for development
 const API_BASE_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:8001'
-    : '/api';
+    : 'https://mindsupport-production.up.railway.app';
 
 class ApiService {
     constructor() {

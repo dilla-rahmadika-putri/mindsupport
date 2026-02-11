@@ -1,11 +1,14 @@
 # MindSupport Frontend - Nginx
 FROM nginx:alpine
 
+# Set default port for local development
+ENV PORT=80
+
 # Remove default nginx config
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy custom nginx config
-COPY nginx.conf /etc/nginx/conf.d/
+COPY nginx.conf /etc/nginx/templates/default.conf.template
 
 # Copy frontend files
 COPY . /usr/share/nginx/html
@@ -20,7 +23,7 @@ EXPOSE 80
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD wget --quiet --tries=1 --spider http://localhost:80/ || exit 1
+    CMD wget --quiet --tries=1 --spider http://localhost:${PORT}/ || exit 1
 
 # Run nginx
 CMD ["nginx", "-g", "daemon off;"]
